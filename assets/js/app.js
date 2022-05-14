@@ -1,19 +1,23 @@
+
+
+
 const navMenu = document.getElementById('nav-menu'),
-toggleMenu = document.getElementById('toggle-menu'),
-closeMenu = document.getElementById('close-menu')
- 
-toggleMenu.addEventListener('click', ()=>{
+    toggleMenu = document.getElementById('toggle-menu'),
+    closeMenu = document.getElementById('close-menu')
+
+toggleMenu.addEventListener('click', () => {
     navMenu.classList.toggle('show');
 })
-closeMenu.addEventListener('click', ()=>{
+closeMenu.addEventListener('click', () => {
     navMenu.classList.remove('show');
 })
 
 
-const butn = document.querySelectorAll('a');
-    butn.forEach(btn => {
-        butn.addEventListener('click', function(e){
-    let x= e.clientX - e.target.offsetLeft;
+const butn = document.getElementsByClassName('btn-primary')[0]
+console.log(butn)
+
+butn.addEventListener('click', function (e) {
+    let x = e.clientX - e.target.offsetLeft;
     let y = e.clientY - e.target.offsetTop;
 
     let ripples = document.createElement('span');
@@ -21,6 +25,8 @@ const butn = document.querySelectorAll('a');
     ripples.style.top = y + 'px';
     this.appendChild(ripples);
 
+    setTimeout(() =>{
+        ripples.remove()
+    }, 1000);
 
 })
-    })

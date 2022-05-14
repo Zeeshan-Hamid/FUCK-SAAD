@@ -18,6 +18,35 @@ a{
 ul{
     list-style: none;
 }
+
+
+#float-nav{
+    position: fixed;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    
+}
+
+.float-list{
+    list-style: none;
+    padding: 40px 10px;
+    background-color: #eee;
+    border-radius: 50px;
+}
+.float-link{
+    color: #222;
+      font-size: 32px;
+}
+.float-link:hover{
+	font-size: 	45px;
+	transition: 	0.3s ease;
+}
+
+
+
+
+
 header{
     display: flex;
     background-color: transparent;
@@ -106,14 +135,34 @@ a.btn-primary{
     background: linear-gradient(90deg, #000000, #939393);
     z-index: 2 !important;
     position: relative;
-    top: 50%;
+    top: 100%;
     left: 50%;
+    overflow: hidden;
     transform: translate(-50%, -50%);
 }
-.btn-primary:hover{
-    background-color: linear-gradient(90deg, #bcbcbc, #000000);
-   
+span{
+    position: absolute;
+    background: #fff;
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+    border-radius: 50%;
+    animation: animate 1s linear infinite;
 }
+@keyframes animate{
+    0%{
+        width: 0px;
+        height: 0px;
+        opacity: 0.5;
+    }
+    100%{
+        width: 500px;
+        height: 500px;
+        opacity: 0;
+    }
+}
+
+
+
 
 
 .js_text{
@@ -129,6 +178,29 @@ a.btn-primary{
 
 
 @media screen and (max-width: 768px) {
+
+    #float-nav{
+        position: fixed;
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+    }
+    
+    .float-list{
+        display: flex;
+        list-style: none;
+        padding: 10px 40px;
+        background-color: #eee;
+        font-size: 20px;
+        border-radius: 50px;
+    }
+    .float-link{
+        color: #222;
+        margin: 10px;
+    }
+
+
     header{
         height: 55px;
         justify-content: space-between;
@@ -201,3 +273,255 @@ a.btn-primary{
     }
    
 }
+
+
+
+
+
+
+/* Animations */
+
+
+
+.bounceInRight {
+    -webkit-animation-name: bounceInRight;
+    animation-name: bounceInRight;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    z-index: 100;
+    }
+    @-webkit-keyframes bounceInRight {
+    0%, 60%, 75%, 90%, 100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+    0% {
+    opacity: 0;
+    -webkit-transform: translate3d(3000px, 0, 0);
+    transform: translate3d(3000px, 0, 0);
+    }
+    60% {
+    opacity: 1;
+    -webkit-transform: translate3d(-25px, 0, 0);
+    transform: translate3d(-25px, 0, 0);
+    }
+    75% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+    }
+    90% {
+    -webkit-transform: translate3d(-5px, 0, 0);
+    transform: translate3d(-5px, 0, 0);
+    }
+    100% {
+    -webkit-transform: none;
+    transform: none;
+    }
+    }
+    @keyframes bounceInRight {
+    0%, 60%, 75%, 90%, 100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+    0% {
+    opacity: 0;
+    -webkit-transform: translate3d(3000px, 0, 0);
+    transform: translate3d(3000px, 0, 0);
+    }
+    60% {
+    opacity: 1;
+    -webkit-transform: translate3d(-25px, 0, 0);
+    transform: translate3d(-25px, 0, 0);
+    }
+    75% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+    }
+    90% {
+    -webkit-transform: translate3d(-5px, 0, 0);
+    transform: translate3d(-5px, 0, 0);
+    }
+    100% {
+    -webkit-transform: none;
+    transform: none;
+    }
+    } 
+
+    .zoomIn {
+        -webkit-animation-name: zoomIn;
+        animation-name: zoomIn;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        
+        }
+        @-webkit-keyframes zoomIn {
+        0% {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3);
+        }
+        50% {
+        opacity: 1;
+        }
+        }
+        @keyframes zoomIn {
+        0% {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3);
+        }
+        50% {
+        opacity: 1;
+        }
+        } 
+
+
+        .wobble {
+            -webkit-animation-name: wobble;
+            animation-name: wobble;
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            }
+            @-webkit-keyframes wobble {
+            0% {
+            -webkit-transform: none;
+            transform: none;
+            }
+            15% {
+            -webkit-transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+            transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+            }
+            30% {
+            -webkit-transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+            transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+            }
+            45% {
+            -webkit-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+            transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+            }
+            60% {
+            -webkit-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+            transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+            }
+            75% {
+            -webkit-transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+            transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+            }
+            100% {
+            -webkit-transform: none;
+            transform: none;
+            }
+            }
+            @keyframes wobble {
+            0% {
+            -webkit-transform: none;
+            transform: none;
+            }
+            15% {
+            -webkit-transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+            transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+            }
+            30% {
+            -webkit-transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+            transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+            }
+            45% {
+            -webkit-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+            transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+            }
+            60% {
+            -webkit-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+            transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+            }
+            75% {
+            -webkit-transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+            transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+            }
+            100% {
+            -webkit-transform: none;
+            transform: none;
+            }
+            } 
+
+
+
+            .animated.flip {
+                -webkit-backface-visibility: visible;
+                backface-visibility: visible;
+                -webkit-animation-name: flip;
+                animation-name: flip;
+                -webkit-animation-duration: 1s;
+                animation-duration: 1s;
+                -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+                }
+                @-webkit-keyframes flip {
+                0% {
+                -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -360deg);
+                transform: perspective(400px) rotate3d(0, 1, 0, -360deg);
+                -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+                }
+                40% {
+                -webkit-transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg);
+                transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg);
+                -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+                }
+                50% {
+                -webkit-transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg);
+                transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+                }
+                80% {
+                -webkit-transform: perspective(400px) scale3d(.95, .95, .95);
+                transform: perspective(400px) scale3d(.95, .95, .95);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+                }
+                100% {
+                -webkit-transform: perspective(400px);
+                transform: perspective(400px);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+                }
+                }
+                @keyframes flip {
+                0% {
+                -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -360deg);
+                transform: perspective(400px) rotate3d(0, 1, 0, -360deg);
+                -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+                }
+                40% {
+                -webkit-transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg);
+                transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg);
+                -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+                }
+                50% {
+                -webkit-transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg);
+                transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+                }
+                80% {
+                -webkit-transform: perspective(400px) scale3d(.95, .95, .95);
+                transform: perspective(400px) scale3d(.95, .95, .95);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+                }
+                100% {
+                -webkit-transform: perspective(400px);
+                transform: perspective(400px);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+                }
+                } 
